@@ -1,0 +1,6 @@
+title: Welcome
+id: 05-02-2025_welcome
+tags: welcome
+
+Welcome to the <u>first</u> journal entry of hopefully many to come.
+Feel free to follow the <a href="rss.xml">RSS feed</a>

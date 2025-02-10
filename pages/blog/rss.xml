@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+    <rss version="2.0">
+        <channel>
+            <title>megabytesofrem Feed</title>
+            <link>https://megabytesofrem.com/pages/blog/</link>
+            <description>Latest entries</description>
+            
+        <item>
+            <title>Welcome</title>
+            <link>https://megabytesofrem.com/pages/blog/05-02-2025_welcome.html</link>
+            <description>
+Welcome to the <u>first</u> journal entry of hopefully many to come.
+Feel free to follow the <a href="rss.xml">RSS feed</a></description>
+            <pubDate>Mon, 10 Feb 2025 22:50:34 GMT</pubDate>
+        </item>
+        
+        </channel>
+    </rss>
