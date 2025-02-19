@@ -46,11 +46,11 @@ def build_html(title, body):
                 <ul>
                     <li><a href="../../index.html">Home</a></li>
                     <li><a href="../projects.html">Projects</a></li>
-                    <li><a href="index.html">[Posts]</a></li>
+                    <li><a href="index.html" class="curr-page">Posts</a></li>
                 </ul>
             </nav>
         </header>
-        <hr>
+
         <div class="page">
             <div class="page-content">{body}</div>
         </div>

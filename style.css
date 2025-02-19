@@ -1,14 +1,27 @@
 :root {
-    --primary-color-01: #ffa7f3;
-    --primary-color-02: #ff7ae0;
-    --dim-primary-color: #c55dad;
-    --border-color: #ffaef4;
+    --header-color: #9265bb;
+    --page-bg-color: #ffffff;
+
+    --primary-color-01: #b6a3d9;
+    --primary-color-02: #9774b8;
+    --dim-primary-color: var(--primary-color-02);
+    --active-color: #efe2ff;
+    --border-color: var(--primary-color-02);
+
+    /* Page text color */
     --text-color: #000000;
+}
+
+/* Custom font */
+@font-face {
+    font-family: rainyhearts;
+    src: url('assets/rainyhearts.ttf');
 }
 
 body,
 html {
-    font-family: 'Quicksand', sans-serif;
+    font-family: 'rainyhearts', sans-serif;
+    font-size: 1.1em;
     font-weight: 440;
 
     cursor: url('assets/arrow.png'), auto;
@@ -24,25 +37,45 @@ html {
 }
 
 .header {
-    /* Fake dithered gradient */
-    background:
-        repeating-linear-gradient(45deg, var(--primary-color-02) 0px, rgba(255, 255, 255, 0.4) 1px),
-        linear-gradient(180deg, var(--primary-color-01), white);
-
-    background-size: 5px 5px, cover;
+    background-color: var(--header-color);
+    border-bottom: 2px dotted #ffffff;
 
     text-align: center;
     padding: 1em;
     margin-bottom: 1.3em;
+    width: 100%;
+}
+
+.header-inner h2 {
+    color: var(--active-color)
+}
+
+h1 {
+    margin: 0.1em;
+}
+
+h1,
+h2 {
+    color: var(--primary-color-02);
 }
 
 body {
-    /* background-image: url("assets/pastelheartsbg.gif"); */
-    background-image: url("assets/bg.gif");
-    background-size: 200px;
+    background-image: url("assets/bg.png");
+    background-size: 32px;
     background-repeat: repeat;
 
     height: 100vh;
+}
+
+table th {
+    text-align: left;
+    color: #ffffff;
+    border: 1px solid var(--border-color);
+    background-color: var(--dim-primary-color);
+}
+
+table td {
+    border: 1px solid var(--border-color);
 }
 
 .header h1,
@@ -54,6 +87,7 @@ body {
 }
 
 .menu-icon {
+    color: var(--active-color);
     display: none;
 }
 
@@ -78,8 +112,11 @@ body {
     display: flex;
     flex-direction: column;
 
-    background-color: #ffffff;
+
+    background-color: var(--page-bg-color);
     border: 1px solid var(--border-color);
+    border-top: 5px solid var(--primary-color-02);
+
     padding: 1em;
     width: 70vw;
     height: auto;
@@ -94,15 +131,25 @@ body {
     padding-top: 0.5em;
 }
 
-a:link,
-a:visited {
-    color: var(--text-color);
+.site-nav a:not(.curr-page):link,
+.site-nav a:not(.curr-page):visited {
+    color: #ffffff;
     cursor: url('assets/hand.png'), pointer;
     text-decoration: underline
 }
 
-a:hover {
+.curr-page {
+    color: var(--active-color);
+    text-decoration: underline;
+}
+
+a {
     color: var(--dim-primary-color);
+    text-decoration: underline;
+}
+
+a:hover {
+    /* color: var(--dim-primary-color); */
     cursor: url('assets/hand.png'), pointer;
     text-decoration: underline;
 }
@@ -122,7 +169,6 @@ hr {
 
 .border-image {
     border: 1px solid var(--border-color);
-    /* max-width: 200px; */
     max-width: calc(40% - 3em);
 
     object-fit: cover;
@@ -182,7 +228,10 @@ hr {
 
     .page-content {
         width: 90vw;
-        border: 0px;
+        margin: auto;
+        border: 1px solid var(--border-color);
+        border-top: 5px solid var(--primary-color-02);
+
     }
 
     .menu-icon {
@@ -193,17 +242,34 @@ hr {
     }
 
     .site-nav {
-        display: none;
-        flex-direction: column;
-        align-items: flex-start;
-        text-align: left;
+        position: absolute;
+        visibility: hidden;
+
+        top: 0;
+        left: 0;
         width: 100%;
+        height: 100%;
+        transform: translateY(-100%);
+        transition: transform 0.2s ease-in;
+    }
+
+    .site-nav.show {
+        visibility: visible;
+        background-color: var(--header-color);
+        transform: translateY(55%);
+        height: auto;
     }
 
     .site-nav ul {
+        list-style-type: none;
+        width: 100%;
+        margin-bottom: 1em;
+        display: flex;
         flex-direction: column;
-        padding-left: 0;
+        align-items: flex-start;
+        /* Align items to the left */
     }
+
 
     .site-nav ul li {
         margin: 0.5em 1.0em;
