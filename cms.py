@@ -1,3 +1,6 @@
+# Simple static site generator for blog posts
+# Entries are placed in entries directory. An RSS feed is generated as a side effect.
+
 import glob
 import os
 
@@ -21,9 +24,12 @@ def parse_entry(path):
     return {"title": title, "id": id, "tags": tags, "content": content}
 
 def parse_entries():
-    return [parse_entry(path) for path in glob.glob('entries/*.txt')]
+    return [parse_entry(path) for path in glob.glob('entries/**/*.txt', recursive=True)]
 
-def build_html(title, body):
+def build_html(title, body, path):
+    depth = len(os.path.relpath(path, start="blog").split(os.sep)) - 1
+    relative_path = "../" * depth
+    
     return f"""
     <!DOCTYPE html>
     <html>
@@ -33,8 +39,8 @@ def build_html(title, body):
     
         <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
 
-        <link rel="stylesheet" type="text/css" href="../../normalize.css">
-        <link rel="stylesheet" type="text/css" href="../../style.css">
+        <link rel="stylesheet" type="text/css" href="{relative_path}style/normalize.css">
+        <link rel="stylesheet" type="text/css" href="{relative_path}style/style.css">
     </head>
     <body>
         <header class="header">
@@ -44,9 +50,9 @@ def build_html(title, body):
             </div>
             <nav class="site-nav" id="site-nav">
                 <ul>
-                    <li><a href="../../index.html">Home</a></li>
-                    <li><a href="../projects.html">Projects</a></li>
-                    <li><a href="index.html" class="curr-page">Posts</a></li>
+                    <li><a href="{relative_path}index.html">Home</a></li>
+                    <li><a href="{relative_path}pages/projects.html">Projects</a></li>
+                    <li><a href="{relative_path}pages/blog/index.html" class="curr-page">Posts</a></li>
                 </ul>
             </nav>
         </header>
@@ -54,7 +60,7 @@ def build_html(title, body):
         <div class="page">
             <div class="page-content">{body}</div>
         </div>
-        <script src="../../scripts/nav.js"></script>
+        <script src="{relative_path}scripts/nav.js"></script>
     </body>
     </html>
     """
@@ -62,9 +68,15 @@ def build_html(title, body):
 def compile_entries():
     os.makedirs("pages/blog", exist_ok=True)
     entries = parse_entries()
+
+    print(f"Compiling {len(entries)} entries...")
+    print(entries)
     
     # Generate individual post pages
     for entry in entries:
+        depth = len(os.path.relpath(f"pages/blog/{entry['id']}.html", start='pages/blog').split(os.sep)) - 1
+        relative_path = '../' * depth
+
         entry_body = f"""
         <h2>{entry['title']}</h2>
         <p>{entry['content']}</p>
@@ -72,10 +84,15 @@ def compile_entries():
             <h4>{', '.join(['#' + tag for tag in entry['tags']])}</h4>
         </footer>
 
-        <a href="index.html">Return to index</a>
+        <a href="{relative_path}index.html">Return to index</a>
         """
-        with open(f"pages/blog/{entry['id']}.html", 'w') as f:
-            f.write(build_html(entry['title'], entry_body))
+        
+        output_path = f"pages/blog/{entry['id']}.html"
+        output_dir = os.path.dirname(output_path)
+        os.makedirs(output_dir, exist_ok=True)
+
+        with open(output_path, 'w') as f:
+            f.write(build_html(entry['title'], entry_body, output_path))
     
     # Generate index page
     index_body = "".join(
@@ -84,7 +101,7 @@ def compile_entries():
     )
 
     with open("pages/blog/index.html", 'w') as f:
-        f.write(build_html("Posts", index_body))
+        f.write(build_html("Posts", index_body, "pages/blog/index.html"))
 
 def generate_rss():
     entries = parse_entries()

@@ -15,7 +15,7 @@
 /* Custom font */
 @font-face {
     font-family: rainyhearts;
-    src: url('assets/rainyhearts.ttf');
+    src: url('rainyhearts.ttf');
 }
 
 body,
@@ -24,7 +24,7 @@ html {
     font-size: 1.1em;
     font-weight: 440;
 
-    cursor: url('assets/arrow.png'), auto;
+    cursor: url('../assets/arrow.png'), auto;
     margin: 0;
     padding: 0;
 }
@@ -60,7 +60,7 @@ h2 {
 }
 
 body {
-    background-image: url("assets/bg.png");
+    background-image: url("../assets/bg.png");
     background-size: 32px;
     background-repeat: repeat;
 
@@ -134,7 +134,7 @@ table td {
 .site-nav a:not(.curr-page):link,
 .site-nav a:not(.curr-page):visited {
     color: #ffffff;
-    cursor: url('assets/hand.png'), pointer;
+    cursor: url('../assets/hand.png'), pointer;
     text-decoration: underline
 }
 

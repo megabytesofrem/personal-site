@@ -1,5 +1,5 @@
 title: Welcome
-id: 05-02-2025_welcome
+id: 06-02-2025/welcome
 tags: welcome
 
 Welcome to the <u>first</u> journal entry of hopefully many to come.
