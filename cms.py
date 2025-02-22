@@ -20,11 +20,13 @@ def parse_entry(path):
             id = line[3:].strip()
         else:
             content += line
+
+    content = content.replace("\n\n", "<br><br>")
     
     return {"title": title, "id": id, "tags": tags, "content": content}
 
 def parse_entries():
-    return [parse_entry(path) for path in glob.glob('entries/**/*.txt', recursive=True)]
+    return [parse_entry(path) for path in glob.glob('entries/**/*.*', recursive=True)]
 
 def build_html(title, body, path):
     depth = len(os.path.relpath(path, start="blog").split(os.sep)) - 1
@@ -52,7 +54,8 @@ def build_html(title, body, path):
                 <ul>
                     <li><a href="{relative_path}index.html">Home</a></li>
                     <li><a href="{relative_path}pages/projects.html">Projects</a></li>
-                    <li><a href="{relative_path}pages/blog/index.html" class="curr-page">Posts</a></li>
+                    <li><a href="{relative_path}pages/links.html">Links</a></li>
+                    <li><a href="{relative_path}pages/blog/index.html" class="curr-page">Blog</a></li>
                 </ul>
             </nav>
         </header>
@@ -96,7 +99,7 @@ def compile_entries():
     
     # Generate index page
     index_body = "".join(
-        f'<div class="journal-entry"><h2><a href="{e["id"]}.html">{e["title"]}</a></h2><h3>{", ".join(["#" + tag for tag in e["tags"]])}</h3><p>{e["content"][:80]}...</p></div>'
+        f'<div class="journal-entry"><h2><a href="{e["id"]}.html">{e["title"]}</a></h2><h3>{", ".join(["#" + tag for tag in e["tags"]])}</h3><p>{e["content"][:1000]}</p></div>'
         for e in entries
     )
 

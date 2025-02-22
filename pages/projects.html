@@ -1,86 +1,108 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-
-<head>
+  <head>
     <title>megabytesofrem.com</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
+    <link rel="stylesheet" type="text/css" href="../style/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="../style/style.css" />
+  </head>
 
-    <link rel="stylesheet" type="text/css" href="../style/normalize.css">
-    <link rel="stylesheet" type="text/css" href="../style/style.css">
-</head>
-
-<body>
+  <body>
     <header class="header">
-        <div class="header-inner">
-            <div class="menu-icon" id="menu-icon">
-                &#9776;
-            </div>
-            <h2>megabytesofrem.com</h2>
-        </div>
+      <div class="header-inner">
+        <div class="menu-icon" id="menu-icon">&#9776;</div>
+        <h2>megabytesofrem.com</h2>
+      </div>
 
-        <nav class="site-nav" id="site-nav">
-            <ul>
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="#" class="curr-page">Projects</a></li>
-                <li><a href="blog/index.html">Posts</a></li>
-            </ul>
-        </nav>
+      <nav class="site-nav" id="site-nav">
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="#" class="curr-page">Projects</a></li>
+          <li><a href="links.html">Links</a></li>
+          <li><a href="blog/index.html">Blog</a></li>
+        </ul>
+      </nav>
     </header>
 
     <div class="page">
+      <div class="page-content">
+        <h1>Projects</h1>
+        <br />
 
-        <div class="page-content">
-            <h1>Projects</h1>
-            <p>Here's a list of projects I've been working on, if you're interested in that</p>
+        <p>
+          Here's a list of projects I've been working on, if you're interested
+          in that
+        </p>
 
-            <ul id="project-list">
-                <span>
-                    <li><a href="https://github.com/megabytesofrem/taro">Taro - A small compiler and VM written in
-                            C.</a>
-                    </li>
+        <ul id="project-list">
+          <span>
+            <li>
+              <a href="https://github.com/megabytesofrem/taro"
+                >Taro - A small compiler and VM written in C.</a
+              >
+            </li>
 
-                    <p style="max-width: 800px">A small compiler and VM written in C. Eventual goals for it to be self
-                        hosting. This is the current project I pour my blood, sweat and tears into.
-                    </p>
-                </span>
+            <p style="max-width: 800px">
+              A small compiler and VM written in C. This is the current project
+              I pour my blood, sweat and tears into.
+            </p>
+          </span>
 
-                <span>
-                    <li><a href="https://github.com/megabytesofrem/deimos">Deimos - Another compiler project written in
-                            Rust.</a>
-                    </li>
+          <span>
+            <li>
+              <a href="https://github.com/megabytesofrem/deimos"
+                >Deimos - Another compiler project written in Rust</a
+              >
+            </li>
 
-                    <p style="max-width: 800px">This was another compiler project, but it was too ambitious and I was
-                        still
-                        learning Rust
-                        so I abandoned it and took what I learned and used it to start Taro.
-                    </p>
-                </span>
+            <p style="max-width: 800px">
+              This was another compiler project, but it was too ambitious and I
+              was still learning Rust so I abandoned it and took what I learned
+              and used it to start Taro.
+            </p>
+          </span>
 
-                <span>
-                    <li><a href="https://github.com/megabytesofrem/ir3">IR3 - IRC client for the Nintendo 3DS</a>
-                    </li>
+          <span>
+            <li>
+              <a href="https://github.com/megabytesofrem/ir3"
+                >IR3 - IRC client for the Nintendo 3DS</a
+              >
+            </li>
 
-                    <p style="max-width: 800px">An IRC client for the Nintendo 3DS written in C. 100% of the networking
-                        code
-                        is home-grown including the IRC parser.</p>
-                </span>
-            </ul>
+            <p style="max-width: 800px">
+              An IRC client for the Nintendo 3DS written in C. 100% of the
+              networking code is home-grown including the IRC parser.
+            </p>
+          </span>
+        </ul>
 
-            <br>
-            <p>Older projects, none of these are in active development or considered</p>
-            <ul>
-                <li><a href="https://github.com/megabytesofrem/aurora">Aurora - An AUR (Arch User Repository) helper
-                        written
-                        in Rust</a></li>
-            </ul>
-        </div>
+        <br />
+        <p>
+          Older projects, none of these are in active development, although a
+          few are considered
+        </p>
+        <ul>
+          <li>
+            <a href="https://github.com/megabytesofrem/aurora"
+              >Aurora - An AUR (Arch User Repository) helper written in Rust</a
+            >
+          </li>
+
+          <li>
+            <a href="https://github.com/megabytesofrem/celesteos-old/"
+              >CelesteOS - Old abandoned OS from 2020-2021 (may remake one day)
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
 
     <script src="../scripts/nav.js"></script>
-
-</body>
-
+  </body>
 </html>

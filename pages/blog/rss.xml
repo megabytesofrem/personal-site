@@ -9,9 +9,19 @@
             <title>Welcome</title>
             <link>https://megabytesofrem.com/pages/blog/06-02-2025/welcome.html</link>
             <description>
-Welcome to the <u>first</u> journal entry of hopefully many to come.
+Welcome to the <u>first</u> blog entry of hopefully many to come.
 Feel free to follow the <a href="rss.xml">RSS feed</a></description>
-            <pubDate>Thu, 20 Feb 2025 03:39:59 GMT</pubDate>
+            <pubDate>Sat, 22 Feb 2025 19:01:00 GMT</pubDate>
+        </item>
+        
+        <item>
+            <title>Website Updates</title>
+            <link>https://megabytesofrem.com/pages/blog/website-updates.html</link>
+            <description>
+As you may have noticed, this site has gone through a <u>few</u> redesigns since I originally
+published it. This is because the view I had for the website has been continually expanding.
+Originally, </description>
+            <pubDate>Sat, 22 Feb 2025 19:01:00 GMT</pubDate>
         </item>
         
         </channel>

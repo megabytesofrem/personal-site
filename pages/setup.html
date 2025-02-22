@@ -1,91 +1,96 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-
-<head>
+  <head>
     <title>megabytesofrem.com</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-    <link rel="stylesheet" type="text/css" href="../normalize.css">
-    <link rel="stylesheet" type="text/css" href="../style.css">
-</head>
+    <link rel="stylesheet" type="text/css" href="../style/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="../style/style.css" />
+  </head>
 
-<body>
+  <body>
     <header class="header">
-        <div class="header-inner">
-            <div class="menu-icon" id="menu-icon">
-                &#9776;
-            </div>
-            <h2>megabytesofrem.com</h2>
-        </div>
+      <div class="header-inner">
+        <div class="menu-icon" id="menu-icon">&#9776;</div>
+        <h2>megabytesofrem.com</h2>
+      </div>
 
-        <nav class="site-nav" id="site-nav">
-            <ul>
-                <li><a href="../index.html">Home</a></li>
-                <li><a href="projects.html">Projects</a></li>
-                <li><a href="blog/index.html">Posts</a></li>
-            </ul>
-        </nav>
+      <nav class="site-nav" id="site-nav">
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="blog/index.html">Blog</a></li>
+          <li><a href="links.html">Links</a></li>
+        </ul>
+      </nav>
     </header>
 
     <div class="page">
-        <div class="page-content">
-            <h1>My Setup</h1>
-            <br><br>
+      <div class="page-content">
+        <h1>My Setup</h1>
+        <br /><br />
 
-            <h3>PC specs</h3>
-            <table id="pc-hardware">
-                <tr>
-                    <th>Component</th>
-                    <th>Model</th>
-                    <th>Notes (if any)</th>
-                </tr>
-                <tr>
-                    <td>CPU</td>
-                    <td>Ryzen 7 5800X</td>
-                    <td>-</td>
-                </tr>
-                <tr>
-                    <td>GPU</td>
-                    <td>RX 7800 XT</td>
-                    <td>Upgraded from 3060 Ti in 2024</td>
-                </tr>
-                <tr>
-                    <td>RAM</td>
-                    <td>32GB Corsair Vengeance RGB Pro</td>
-                    <td>Running at 3200MHz</td>
-                </tr>
-                <tr>
-                    <td>Case</td>
-                    <td>Corsair iCue 4000X</td>
-                    <td>-</td>
-                </tr>
-                <tr>
-                    <td>Monitors</td>
-                    <td>ASUS ROG XG27AQDMG OLED, XG27AQ</td>
-                    <td>Both 1440p. Primary is landscape, and secondary is portrait.</td>
-                </tr>
-            </table>
+        <h3>PC specs</h3>
+        <table id="pc-hardware">
+          <tr>
+            <th>Component</th>
+            <th>Model</th>
+            <th>Notes (if any)</th>
+          </tr>
+          <tr>
+            <td>CPU</td>
+            <td>Ryzen 7 5800X</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>GPU</td>
+            <td>RX 7800 XT</td>
+            <td>Upgraded from 3060 Ti in 2024</td>
+          </tr>
+          <tr>
+            <td>RAM</td>
+            <td>32GB Corsair Vengeance RGB Pro</td>
+            <td>Running at 3200MHz</td>
+          </tr>
+          <tr>
+            <td>Case</td>
+            <td>Corsair iCue 4000X</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <td>Monitors</td>
+            <td>ASUS ROG XG27AQDMG OLED, XG27AQ</td>
+            <td>
+              Both 1440p. Primary is landscape, and secondary is portrait.
+            </td>
+          </tr>
+        </table>
 
-            <br><br>
+        <br /><br />
 
-            <h3>Keyboard</h3>
-            <table id="keyboard">
-                <tr>
-                    <td rowspan="4"><img src="../assets/keeb.jpg" style="width: 200px"></td>
-                </tr>
-                <tr>
-                    <td style="vertical-align: top">
-                        Keycaps are GMK Chaos Theory and the switches are Durock Cerulean Tactile.
-                        Built this to replace a custom board that unfortunately broke (water damage).
-                    </td>
-                </tr>
-            </table>
-        </div>
+        <h3>Keyboard</h3>
+        <table id="keyboard">
+          <tr>
+            <td rowspan="4">
+              <img src="../assets/keeb.jpg" style="width: 200px" />
+            </td>
+          </tr>
+          <tr>
+            <td style="vertical-align: top">
+              Keycaps are GMK Chaos Theory and the switches are Durock Cerulean
+              Tactile. Built this to replace a custom board that unfortunately
+              broke (water damage).
+            </td>
+          </tr>
+        </table>
+      </div>
     </div>
 
     <script src="scripts/nav.js"></script>
-</body>
-
+  </body>
 </html>
