@@ -6,22 +6,21 @@
             <description>Latest entries</description>
             
         <item>
-            <title>Welcome</title>
-            <link>https://megabytesofrem.com/pages/blog/06-02-2025/welcome.html</link>
-            <description>
-Welcome to the <u>first</u> blog entry of hopefully many to come.
-Feel free to follow the <a href="rss.xml">RSS feed</a></description>
-            <pubDate>Sat, 22 Feb 2025 19:01:00 GMT</pubDate>
-        </item>
-        
-        <item>
             <title>Website Updates</title>
             <link>https://megabytesofrem.com/pages/blog/website-updates.html</link>
             <description>
 As you may have noticed, this site has gone through a <u>few</u> redesigns since I originally
 published it. This is because the view I had for the website has been continually expanding.
 Originally, </description>
-            <pubDate>Sat, 22 Feb 2025 19:01:00 GMT</pubDate>
+            <pubDate>Sun, 23 Feb 2025 08:49:07 GMT</pubDate>
+        </item>
+        
+        <item>
+            <title>The Age of AI</title>
+            <link>https://megabytesofrem.com/pages/blog/age-of-ai.html</link>
+            <description>
+Today I woke up, checked my YouTube feed and saw a <a href="https://youtu.be/1Se2zTlXDwY">video</a> by the Primeagen that really stood out to me.<br></br>We live in an age where we can just prompt a </description>
+            <pubDate>Sun, 23 Feb 2025 08:49:07 GMT</pubDate>
         </item>
         
         </channel>
