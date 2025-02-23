@@ -248,14 +248,16 @@ hr {
         left: 0;
         width: 100%;
         height: 100%;
-        transform: translateY(-100%);
-        transition: transform 0.1s ease-in;
+        z: 0;
+        transform: translateY(65%);
+        transition: transform 0.15s ease-in-out;
     }
 
     .site-nav.show {
         visibility: visible;
         background-color: var(--header-color);
         transform: translateY(85%);
+        transition: transform 0.15s ease-out;
         height: auto;
     }
 
